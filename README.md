@@ -9,4 +9,4 @@ python detect.py --images_dir ../ped/sample_img0131_100 --results_dir results
 ```
 
 ### 注意
-子ディレクトリを自動でとっているので、images_dirの`.DS_store`などを削除しておく
+子ディレクトリの中身判定を行っていないので、images_dirの`.DS_store`などを削除しておく

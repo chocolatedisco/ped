@@ -6,7 +6,6 @@ python detect.py --images_dir 画像一覧を読み込むディレクトリ  --r
 ### サンプルコマンド
 ```
 python detect.py --images_dir ../ped/sample_img0131_100 --results_dir results
-../ped/sample_img0131_100/knit-sweater/49155488b_14_d_500.jpg
 ```
 
 ### 注意

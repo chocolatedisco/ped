@@ -9,9 +9,11 @@ import cv2
 import os
 import re
 # construct the argument parse and parse the arguments
-# ap = argparse.ArgumentParser()
-# ap.add_argument("-i", "--images", required=True, help="path to images directory")
-# args = vars(ap.parse_args())
+ap = argparse.ArgumentParser()
+ap.add_argument("-id", "--images_dir", required=True, help="path to images directory")
+ap.add_argument("-rd", "--results_dir", required=True, help="path to save images")
+args = vars(ap.parse_args())
+
 # initialize the HOG descriptor/person detector
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
@@ -21,10 +23,12 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 #.DSstoreなどの隠しDir削除する
 
-parentDirPath = 'sample_img0131_100'
+# parentDirPath = '../ped/sample_img0131_100'
+parentDirPath = args["images_dir"]
 childDirs = os.listdir(path=parentDirPath)
 
-resultsDirPath = "results"
+# resultsDirPath = "results"
+resultsDirPath = args["results_dir"]
 os.makedirs(resultsDirPath, exist_ok=True)
 
 for dir_name in childDirs:
